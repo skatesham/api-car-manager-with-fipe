@@ -7,6 +7,8 @@ import core.demo.app.domain.modelo.model.ModeloEntity;
 import core.demo.app.domain.modelo.model.ModeloRepository;
 import core.demo.app.domain.utils.DirtyValueUtils;
 import core.demo.app.domain.veiculo.exceptions.FipeIntegrationNotFoundException;
+import core.demo.app.domain.veiculo.exceptions.MarcaNotFoundException;
+import core.demo.app.domain.veiculo.exceptions.ModeloNotFoundException;
 import core.demo.app.domain.veiculo.exceptions.VeiculoAlreadyExistException;
 import core.demo.app.domain.veiculo.model.VeiculoEntity;
 import core.demo.app.domain.veiculo.model.VeiculoRepository;
@@ -49,10 +51,10 @@ public class VeiculoService {
         }
 
         final MarcaEntity marca = marcaRepository.findByFipeId(veiculoRequest.getMarcaId())
-                .orElseThrow(() -> new EntityNotFoundException("Not found marca=" + veiculoRequest.getMarcaId()));
+                .orElseThrow(() -> new MarcaNotFoundException(veiculoRequest.getMarcaId()));
 
         final ModeloEntity modelo = modeloRepository.findByFipeId(veiculoRequest.getModeloId())
-                .orElseThrow(() -> new EntityNotFoundException("Not found modelo=" + veiculoRequest.getModeloId()));
+                .orElseThrow(() -> new ModeloNotFoundException(veiculoRequest.getModeloId()));
 
         final VeiculoEntity newEntity = VeiculoConverter.toNewEntity(veiculoRequest, marca, modelo);
         this.veiculoRequestedSender.send(newEntity);

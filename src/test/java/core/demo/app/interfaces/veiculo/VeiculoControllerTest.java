@@ -145,9 +145,9 @@ class VeiculoControllerTest {
                 .then()
                 .assertThat()
                 .statusCode(404)
-                .body("code", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getCode()))
-                .body("error", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.name()))
-                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getDescriptionPt()))
+                .body("code", CoreMatchers.equalTo(ApiErrorEnum.MARCA_NOT_FOUND.getCode()))
+                .body("error", CoreMatchers.equalTo(ApiErrorEnum.MARCA_NOT_FOUND.name()))
+                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.MARCA_NOT_FOUND.getDescriptionPt()))
                 .body("message", CoreMatchers.equalTo("Not found marca=999999999"));
     }
 
@@ -169,9 +169,9 @@ class VeiculoControllerTest {
                 .then()
                 .assertThat()
                 .statusCode(404)
-                .body("code", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getCode()))
-                .body("error", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.name()))
-                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getDescriptionPt()))
+                .body("code", CoreMatchers.equalTo(ApiErrorEnum.MODELO_NOT_FOUND.getCode()))
+                .body("error", CoreMatchers.equalTo(ApiErrorEnum.MODELO_NOT_FOUND.name()))
+                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.MODELO_NOT_FOUND.getDescriptionPt()))
                 .body("message", CoreMatchers.equalTo("Not found modelo=999999999"));
     }
 
