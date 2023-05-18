@@ -1,5 +1,5 @@
 # API Car with FIPE integration
-API register vehicle indexed by brand and model with external client app FIPE price search.
+API register vehicle indexed by brand and model with external client app price search.
 ![alt text][8]
 
 ![coverag](https://img.shields.io/badge/coverage-85%25-darkgreen)
