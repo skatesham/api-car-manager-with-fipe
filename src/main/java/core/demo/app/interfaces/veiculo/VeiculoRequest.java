@@ -4,6 +4,7 @@ import lombok.Builder;
 import lombok.Value;
 
 import javax.validation.constraints.NotNull;
+import java.math.BigInteger;
 
 @Value
 @Builder
@@ -19,7 +20,7 @@ public class VeiculoRequest {
     Integer modeloId;
 
     @NotNull
-    Integer precoAnuncio;
+    BigInteger precoAnuncio;
 
     @NotNull
     Integer ano;

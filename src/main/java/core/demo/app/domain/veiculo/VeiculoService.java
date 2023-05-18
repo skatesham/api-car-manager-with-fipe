@@ -27,6 +27,7 @@ import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
 import java.math.BigDecimal;
+import java.math.BigInteger;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -73,7 +74,7 @@ public class VeiculoService {
             throw new FipeIntegrationNotFoundException();
         }
 
-        final Integer precoFipe = DirtyValueUtils.convertToNumber(fipePriceResponse.getValor());
+        final BigInteger precoFipe = DirtyValueUtils.convertToNumber(fipePriceResponse.getValor());
         veiculo.setPrecoFipe(precoFipe);
 
         this.veiculoRepository.save(veiculo);
@@ -86,9 +87,9 @@ public class VeiculoService {
                 .stream()
                 .map(veiculoEntity -> VeiculoResponse.builder()
                         .placa(veiculoEntity.getPlaca())
-                        .preco_anuncio(BigDecimal.valueOf(veiculoEntity.getPrecoAnuncio(), 2).floatValue())
+                        .preco_anuncio(new BigDecimal(veiculoEntity.getPrecoAnuncio(), 2).floatValue())
                         .ano(veiculoEntity.getAno())
-                        .preco_fipe(BigDecimal.valueOf(veiculoEntity.getPrecoFipe(), 2).floatValue())
+                        .preco_fipe(new BigDecimal(veiculoEntity.getPrecoFipe(), 2).floatValue())
                         .modelo(veiculoEntity.getModelo().getName())
                         .marca(veiculoEntity.getMarca().getName())
                         .build())

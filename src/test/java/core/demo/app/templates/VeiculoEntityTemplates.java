@@ -4,6 +4,7 @@ import core.demo.app.domain.marca.model.MarcaEntity;
 import core.demo.app.domain.modelo.model.ModeloEntity;
 import core.demo.app.domain.veiculo.model.VeiculoEntity;
 
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -21,7 +22,7 @@ public class VeiculoEntityTemplates {
                 .builder()
                 .id(UUID.fromString("74344813-01e5-4f88-8f32-bf41d54cad74"))
                 .placa(PLACA)
-                .precoAnuncio(10000000)
+                .precoAnuncio(BigInteger.valueOf(10000000))
                 .ano(2011)
                 .modelo(ModeloEntity.builder()
                         .id(UUID.fromString("b1c9a613-29ee-4171-a5ff-e7d98a0fdaac"))

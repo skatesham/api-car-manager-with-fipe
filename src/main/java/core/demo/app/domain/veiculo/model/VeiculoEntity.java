@@ -5,6 +5,7 @@ import core.demo.app.domain.modelo.model.ModeloEntity;
 import lombok.*;
 
 import javax.persistence.*;
+import java.math.BigInteger;
 import java.time.LocalDateTime;
 import java.util.UUID;
 
@@ -26,11 +27,11 @@ public class VeiculoEntity {
     private String placa;
 
     @Column(name = "preco_anuncio", nullable = false)
-    private Integer precoAnuncio;
+    private BigInteger precoAnuncio;
 
     @Setter
     @Column(name = "preco_fipe", nullable = false)
-    private Integer precoFipe;
+    private BigInteger precoFipe;
 
     @Column(name = "ano", nullable = false)
     private Integer ano;

@@ -2,8 +2,8 @@
 CREATE TABLE VEICULO (
 	id varchar(36) NOT NULL,
 	placa varchar(255) NOT NULL,
-	preco_anuncio int NOT NULL,
-	preco_fipe int NOT NULL,
+	preco_anuncio numeric(19, 0) NOT NULL,
+	preco_fipe numeric(19, 0) NOT NULL,
 	ano int NOT NULL,
 	created_at TIMESTAMP WITH TIME ZONE NOT NULL,
 

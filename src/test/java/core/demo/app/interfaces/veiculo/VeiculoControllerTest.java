@@ -21,6 +21,7 @@ import org.springframework.beans.factory.annotation.Value;
 import org.springframework.boot.test.web.server.LocalServerPort;
 import org.springframework.test.context.jdbc.Sql;
 
+import java.math.BigInteger;
 import java.util.List;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -98,7 +99,7 @@ class VeiculoControllerTest {
         assertEquals(messageEvent.getModelo().getFipeId(), createdOne.getModelo().getFipeId());
         assertEquals(messageEvent.getMarca().getFipeId(), createdOne.getMarca().getFipeId());
         assertEquals(messageEvent.getPrecoAnuncio(), createdOne.getPrecoAnuncio());
-        assertEquals(2218500, createdOne.getPrecoFipe());
+        assertEquals(BigInteger.valueOf(2_218_500), createdOne.getPrecoFipe());
         assertNotNull(createdOne.getCreatedAt());
 
     }
