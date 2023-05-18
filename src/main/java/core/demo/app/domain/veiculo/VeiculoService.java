@@ -5,7 +5,7 @@ import core.demo.app.domain.marca.model.MarcaEntity;
 import core.demo.app.domain.marca.model.MarcaRepository;
 import core.demo.app.domain.modelo.model.ModeloEntity;
 import core.demo.app.domain.modelo.model.ModeloRepository;
-import core.demo.app.domain.utils.DirtyValueUtils;
+import core.demo.app.domain.common.DirtyValueUtils;
 import core.demo.app.domain.veiculo.exceptions.FipeIntegrationNotFoundException;
 import core.demo.app.domain.veiculo.exceptions.MarcaNotFoundException;
 import core.demo.app.domain.veiculo.exceptions.ModeloNotFoundException;
@@ -26,7 +26,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;
 
-import javax.persistence.EntityNotFoundException;
 import java.math.BigDecimal;
 import java.util.List;
 import java.util.stream.Collectors;

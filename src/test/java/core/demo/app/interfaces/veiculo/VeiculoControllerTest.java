@@ -3,7 +3,7 @@ package core.demo.app.interfaces.veiculo;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import core.demo.app.config.api_error.ApiErrorEnum;
-import core.demo.app.domain.utils.JsonUtils;
+import core.demo.app.domain.common.JsonUtils;
 import core.demo.app.domain.veiculo.model.VeiculoEntity;
 import core.demo.app.domain.veiculo.model.VeiculoRepository;
 import core.demo.app.extra.anotations.AppTest;

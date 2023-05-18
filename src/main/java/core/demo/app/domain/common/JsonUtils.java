@@ -1,4 +1,4 @@
-package core.demo.app.domain.utils;
+package core.demo.app.domain.common;
 
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;

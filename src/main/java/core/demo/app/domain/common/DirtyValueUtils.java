@@ -1,4 +1,4 @@
-package core.demo.app.domain.utils;
+package core.demo.app.domain.common;
 
 public class DirtyValueUtils {
 

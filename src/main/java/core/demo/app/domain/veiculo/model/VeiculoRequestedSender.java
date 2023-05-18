@@ -1,6 +1,6 @@
 package core.demo.app.domain.veiculo.model;
 
-import core.demo.app.domain.utils.JsonUtils;
+import core.demo.app.domain.common.JsonUtils;
 import core.demo.app.infrastucture.messaging.MessageSender;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
