@@ -88,6 +88,15 @@ Password: 123456789
 Database: postgres
 ```
 
+__RabbitMQ Credentials__:
+
+- [RabbitMQ Manager][3]
+```shell
+Username: guest
+Password: guest
+```
+
+
 ## Schema
 ![alt text][7]
 
