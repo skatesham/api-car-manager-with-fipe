@@ -147,7 +147,8 @@ class VeiculoControllerTest {
                 .statusCode(404)
                 .body("code", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getCode()))
                 .body("error", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.name()))
-                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getDescriptionPt()));
+                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getDescriptionPt()))
+                .body("message", CoreMatchers.equalTo("Not found marca=999999999"));
     }
 
     @Test
@@ -170,7 +171,8 @@ class VeiculoControllerTest {
                 .statusCode(404)
                 .body("code", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getCode()))
                 .body("error", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.name()))
-                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getDescriptionPt()));
+                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getDescriptionPt()))
+                .body("message", CoreMatchers.equalTo("Not found modelo=999999999"));
     }
 
     @Test
@@ -193,7 +195,8 @@ class VeiculoControllerTest {
                 .statusCode(422)
                 .body("code", CoreMatchers.equalTo(ApiErrorEnum.VEHICULO_PLATE_VIOLATION.getCode()))
                 .body("error", CoreMatchers.equalTo(ApiErrorEnum.VEHICULO_PLATE_VIOLATION.name()))
-                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.VEHICULO_PLATE_VIOLATION.getDescriptionPt()));
+                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.VEHICULO_PLATE_VIOLATION.getDescriptionPt()))
+                .body("message", CoreMatchers.equalTo("Already exists veiculo by name=XYZ-9876"));
     }
 
     @Test
