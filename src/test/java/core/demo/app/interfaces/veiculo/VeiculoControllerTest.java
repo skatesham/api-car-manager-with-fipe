@@ -1,6 +1,5 @@
 package core.demo.app.interfaces.veiculo;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
 import core.demo.app.config.api_error.ApiErrorEnum;
@@ -76,7 +75,7 @@ class VeiculoControllerTest {
     @Test
     @Sql("classpath:/truncate-database.sql")
     @Sql("classpath:/mocks/db/setup-schema.sql")
-    void mustConsumeVeiculoCreationRequestedAndSave() throws JsonProcessingException {
+    void mustConsumeVeiculoCreationRequestedAndSave() {
         // mock
         WireMock.stubFor(WireMock.post(WireMock.urlEqualTo("/veiculos/ConsultarValorComTodosParametros"))
                 .willReturn(WireMock.aResponse()
@@ -107,7 +106,8 @@ class VeiculoControllerTest {
     @Test
     @Sql("classpath:/truncate-database.sql")
     @Sql("classpath:/mocks/db/setup-schema.sql")
-    void mustConsumeAndSendDLQWhenIntegrationError() throws JsonProcessingException {
+    void mustConsumeAndSendDLQWhenIntegrationError() {
+        // mock
         WireMock.stubFor(WireMock.post(WireMock.urlEqualTo("/veiculos/ConsultarValorComTodosParametros"))
                 .willReturn(WireMock.aResponse()
                         .withHeader("Content-Type", "application/json")

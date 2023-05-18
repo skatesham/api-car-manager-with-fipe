@@ -1,6 +1,5 @@
 package core.demo.app.interfaces.veiculo;
 
-import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import core.demo.app.domain.veiculo.VeiculoService;
 import core.demo.app.domain.veiculo.model.VeiculoEntity;

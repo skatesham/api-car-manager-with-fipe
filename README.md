@@ -1,11 +1,14 @@
 # API Car with FIPE integration
+
 ![coverag](https://img.shields.io/badge/coverage-92%25-darkgreen)
 
 API register vehicle indexed by brand and model with external client app price search.
 ![alt text][8]
 
 ## Explanation
+
 How works creation:
+
 1. Receive request for create Vehicle by POST Rest entrypoint
 2. Validate database schema constraints, as: UK, Marca and Modelo
 3. Produce Event for schedule creation
@@ -46,7 +49,6 @@ __Tests__:
 
 - JDK Java 11
 - Docker / Docker Compose
-
 
 ```shell
 ./gradlew build --parallel --x test
@@ -91,13 +93,14 @@ Database: postgres
 __RabbitMQ Credentials__:
 
 - [RabbitMQ Manager][3]
+
 ```shell
 Username: guest
 Password: guest
 ```
 
-
 ## Schema
+
 ![alt text][7]
 
 ## Credits:
