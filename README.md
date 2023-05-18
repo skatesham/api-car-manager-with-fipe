@@ -1,6 +1,6 @@
 # API Car with FIPE integration
 API register vehicle indexed by brand and model with external client app FIPE price search.
-![alt text](/imgs/openapi.png)
+![alt text][8]
 
 ![coverag](https://img.shields.io/badge/coverage-85%25-darkgreen)
 
@@ -33,11 +33,6 @@ __API__:
 - PostgreSQL Driver: Configure connection with PostgreSQL Database
 - Lombok: Java Code Style Improvements
 
-## Requirements
-
-- JDK Java 11
-- Docker / Docker Compose
-
 __Tests__:
 
 - Wiremock: Mock Web client Server
@@ -47,13 +42,19 @@ __Tests__:
 
 ## Running App
 
+### Requirements
+
+- JDK Java 11
+- Docker / Docker Compose
+
+
 ```shell
 ./gradlew build --parallel --x test
 docker build --tag=car-api:latest .
 docker-compose up
 ```
 
-## Open App
+### Open App
 
 - [Health Check][4]
 - [Swagger][1]
@@ -107,4 +108,6 @@ By Dryve
 
 [6]: https://github.com/giovanigenerali/fipe-json
 
-[7]: /imgs/openapi.png
+[7]: https://github.com/skatesham/api-car-manager-with-fipe/blob/main/imgs/schema.png?raw=true
+
+[8]: https://github.com/skatesham/api-car-manager-with-fipe/blob/main/imgs/openapi.png?raw=true
