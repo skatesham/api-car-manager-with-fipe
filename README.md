@@ -1,5 +1,5 @@
 # API Car with FIPE integration
-![coverag](https://img.shields.io/badge/coverage-85%25-darkgreen)
+![coverag](https://img.shields.io/badge/coverage-92%25-darkgreen)
 
 API register vehicle indexed by brand and model with external client app price search.
 ![alt text][8]

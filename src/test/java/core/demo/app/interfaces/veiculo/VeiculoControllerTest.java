@@ -54,7 +54,7 @@ class VeiculoControllerTest {
     @Test
     @Sql("classpath:/truncate-database.sql")
     @Sql("classpath:/mocks/db/setup-schema.sql")
-    void mustValidadeAndProduceVeiculoCreationRequested() {
+    void mustValidateAndProduceVeiculoCreationRequested() {
         // arrange
         VeiculoRequest request = VeiculoRequestTemplates.build();
 

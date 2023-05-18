@@ -1,4 +1,4 @@
-package core.demo.app.infrastucture.messaging;
+package core.demo.app.config;
 
 import org.springframework.amqp.core.*;
 import org.springframework.beans.factory.annotation.Value;

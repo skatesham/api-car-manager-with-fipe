@@ -55,7 +55,7 @@ class VeiculoIntegrationTest {
     @Sql("classpath:/truncate-database.sql")
     @Sql("classpath:/mocks/db/setup-schema.sql")
     @Sql("classpath:/mocks/db/setup-vehicle.sql")
-    void mustIntegrateVeihicleCreationAndReadSavedValue() throws JsonProcessingException {
+    void mustIntegrateVehicleCreationAndReadSavedValue() throws JsonProcessingException {
         VeiculoRequest request = VeiculoRequestTemplates
                 .defaultBuilder()
                 .placa("NEW-1234")

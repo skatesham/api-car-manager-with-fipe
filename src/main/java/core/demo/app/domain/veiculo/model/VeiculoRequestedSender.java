@@ -1,4 +1,4 @@
-package core.demo.app.domain.veiculo;
+package core.demo.app.domain.veiculo.model;
 
 import core.demo.app.domain.utils.JsonUtils;
 import core.demo.app.domain.veiculo.model.VeiculoEntity;

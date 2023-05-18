@@ -10,6 +10,7 @@ import core.demo.app.domain.veiculo.exceptions.FipeIntegrationNotFoundException;
 import core.demo.app.domain.veiculo.exceptions.VeiculoAlreadyExistException;
 import core.demo.app.domain.veiculo.model.VeiculoEntity;
 import core.demo.app.domain.veiculo.model.VeiculoRepository;
+import core.demo.app.domain.veiculo.model.VeiculoRequestedSender;
 import core.demo.app.infrastucture.clients.FipeClient;
 import core.demo.app.infrastucture.clients.FipePriceRequest;
 import core.demo.app.interfaces.veiculo.VeiculoRequest;
@@ -42,8 +43,10 @@ public class VeiculoService {
     public VeiculoEntity scheduleCreation(final VeiculoRequest veiculoRequest) {
         log.trace("action=veiculo-creation status=start placa={}", veiculoRequest.getPlaca());
 
-        this.veiculoRepository.findByPlaca(veiculoRequest.getPlaca())
-                .orElseThrow(() -> new VeiculoAlreadyExistException(veiculoRequest.getPlaca()));
+        final var veiculoByPlacaFoundOpt = this.veiculoRepository.findByPlaca(veiculoRequest.getPlaca());
+        if (veiculoByPlacaFoundOpt.isPresent()) {
+            throw new VeiculoAlreadyExistException(veiculoRequest.getPlaca());
+        }
 
         final MarcaEntity marca = marcaRepository.findByFipeId(veiculoRequest.getMarcaId())
                 .orElseThrow(() -> new EntityNotFoundException("Not found marca=" + veiculoRequest.getMarcaId()));
