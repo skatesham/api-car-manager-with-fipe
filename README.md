@@ -1,6 +1,19 @@
 # API Car with FIPE integration
+API register vehicle indexed by brand and model with external client app FIPE price search.
+![alt text](/imgs/openapi.png)
 
 ![coverag](https://img.shields.io/badge/coverage-85%25-darkgreen)
+
+## Explanation
+How works creation:
+1. Receive request for create Vehicle by POST Rest entrypoint
+2. Validate database schema constraints, as: UK, Marca and Modelo
+3. Produce Event for schedule creation
+4. Consume Event and convert to Object
+5. Request External Client [Demo FIPE][6] getting the vehicle FIPE price
+6. When has External client Integration Error: send to DLQ
+7. Convert vehicle Price value to number
+8. Save vehicle on database
 
 ## Stack
 
@@ -19,6 +32,11 @@ __API__:
 - PostgreSQL: Database SQL
 - PostgreSQL Driver: Configure connection with PostgreSQL Database
 - Lombok: Java Code Style Improvements
+
+## Requirements
+
+- JDK Java 11
+- Docker / Docker Compose
 
 __Tests__:
 
@@ -69,6 +87,9 @@ Password: 123456789
 Database: postgres
 ```
 
+## Schema
+![alt text][7]
+
 ## Credits:
 
 Sham Vinicius Fiorin  
@@ -83,3 +104,7 @@ By Dryve
 [4]: http://localhost:8080/actuator/health
 
 [5]: http://localhost:8080/swagger-ui/index.html#/Veiculo/createVeiculo
+
+[6]: https://github.com/giovanigenerali/fipe-json
+
+[7]: /imgs/openapi.png
