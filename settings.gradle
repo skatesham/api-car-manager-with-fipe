@@ -5,4 +5,4 @@ pluginManagement {
         gradlePluginPortal()
     }
 }
-rootProject.name = 'chapada-guides'
+rootProject.name = 'api-car'
