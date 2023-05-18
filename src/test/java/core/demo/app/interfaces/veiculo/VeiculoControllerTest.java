@@ -3,6 +3,7 @@ package core.demo.app.interfaces.veiculo;
 import com.fasterxml.jackson.core.JsonProcessingException;
 import com.github.tomakehurst.wiremock.client.WireMock;
 import com.github.tomakehurst.wiremock.junit5.WireMockTest;
+import core.demo.app.config.api_error.ApiErrorEnum;
 import core.demo.app.domain.utils.JsonUtils;
 import core.demo.app.domain.veiculo.model.VeiculoEntity;
 import core.demo.app.domain.veiculo.model.VeiculoRepository;
@@ -143,7 +144,10 @@ class VeiculoControllerTest {
                 .post(this.urlPath)
                 .then()
                 .assertThat()
-                .statusCode(404);
+                .statusCode(404)
+                .body("code", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getCode()))
+                .body("error", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.name()))
+                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getDescriptionPt()));
     }
 
     @Test
@@ -163,7 +167,10 @@ class VeiculoControllerTest {
                 .post(this.urlPath)
                 .then()
                 .assertThat()
-                .statusCode(404);
+                .statusCode(404)
+                .body("code", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getCode()))
+                .body("error", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.name()))
+                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.NOT_FOUND.getDescriptionPt()));
     }
 
     @Test
@@ -183,7 +190,10 @@ class VeiculoControllerTest {
                 .post(this.urlPath)
                 .then()
                 .assertThat()
-                .statusCode(422);
+                .statusCode(422)
+                .body("code", CoreMatchers.equalTo(ApiErrorEnum.VEHICULO_PLATE_VIOLATION.getCode()))
+                .body("error", CoreMatchers.equalTo(ApiErrorEnum.VEHICULO_PLATE_VIOLATION.name()))
+                .body("descriptionPt", CoreMatchers.equalTo(ApiErrorEnum.VEHICULO_PLATE_VIOLATION.getDescriptionPt()));
     }
 
     @Test

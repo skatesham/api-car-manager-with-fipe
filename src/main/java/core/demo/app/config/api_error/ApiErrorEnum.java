@@ -8,7 +8,7 @@ import lombok.Getter;
 public enum ApiErrorEnum {
 
     NOT_FOUND(1, "Não foi encontrado"),
-    VEHICULO_PLATE_VIOLATION(2, "Placa já está registrada no sistema.");
+    VEHICULO_PLATE_VIOLATION(2, "Placa já está registrada no sistema");
 
     private final int code;
     private final String descriptionPt;
