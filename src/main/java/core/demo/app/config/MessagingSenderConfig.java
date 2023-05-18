@@ -16,8 +16,6 @@ public class MessagingSenderConfig {
     @Bean
     Queue messagesQueue() {
         return QueueBuilder.durable(queueMessage)
-//                .withArgument("x-dead-letter-exchange", getDLQ())
-//                .withArgument("x-dead-letter-routing-key", getDLQ())
                 .build();
     }
 
@@ -30,11 +28,6 @@ public class MessagingSenderConfig {
     Binding bindingMessages() {
         return BindingBuilder.bind(messagesQueue()).to(messagesExchange()).with(queueMessage);
     }
-
-//    @Bean
-//    FanoutExchange deadLetterExchange() {
-//        return new FanoutExchange(getDLQ());
-//    }
 
     @Bean
     DirectExchange deadLetterExchange() {

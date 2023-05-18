@@ -14,11 +14,4 @@ public class UrlUtils {
                 .toUriString();
     }
 
-    public static String publicDefaultUrl(int port) {
-        return UriComponentsBuilder
-                .fromUriString(HTTP_LOCALHOST_PORT)
-                .buildAndExpand(port)
-                .toUriString();
-    }
-
 }
