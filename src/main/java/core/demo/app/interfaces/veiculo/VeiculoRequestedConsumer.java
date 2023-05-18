@@ -36,7 +36,7 @@ public class VeiculoRequestedConsumer {
 
         } catch (Exception e) {
             messageSender.send(queueMessage + ".dlq", veiculoMessage);
-            log.error("action=veiculo-requested status=dlq");
+            log.error("action=veiculo-requested status=dlq error={}", e.getMessage(), e);
         }
     }
 
