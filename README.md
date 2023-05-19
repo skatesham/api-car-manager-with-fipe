@@ -127,4 +127,4 @@ By Dryve
 
 [8]: https://github.com/skatesham/api-car-manager-with-fipe/blob/main/imgs/openapi.png?raw=true
 
-[9]: https://github.com/skatesham/api-car-manager-with-fipe/blob/main/imgs/flow-diagram.png?raw=true
+[9]: https://github.com/skatesham/api-car-manager-with-fipe/blob/main/imgs/flow-diagram.drawio.png?raw=true
