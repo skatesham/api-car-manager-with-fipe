@@ -103,6 +103,9 @@ Password: guest
 
 ![alt text][7]
 
+## Vehicle Creation Flow
+![alt text][9]
+
 ## Credits:
 
 Sham Vinicius Fiorin  
@@ -123,3 +126,5 @@ By Dryve
 [7]: https://github.com/skatesham/api-car-manager-with-fipe/blob/main/imgs/schema.png?raw=true
 
 [8]: https://github.com/skatesham/api-car-manager-with-fipe/blob/main/imgs/openapi.png?raw=true
+
+[9]: https://github.com/skatesham/api-car-manager-with-fipe/blob/main/imgs/flow-diagram.png?raw=true
